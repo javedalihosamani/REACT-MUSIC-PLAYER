@@ -1,0 +1,11 @@
+.banner{
+    background: linear-gradient(rgba(0,0,0,0.5), #00000080 ), url(./banner.jpg)no-repeat center;
+    background-size: 100%;
+    height: 50vh;
+    animation: banner 10s infinite;
+}
+@keyframes banner {
+    from{background: linear-gradient(62deg, rgba(142, 197, 252,0.5) 0%, rgba(224, 195, 252,0.5) 100%), url(./banner.jpg)no-repeat top;}
+    to{background: linear-gradient(62deg, rgba(142, 197, 252,0.5)  0%, rgba(224, 195, 252,0.5) 100%), url(./banner.jpg)no-repeat bottom;}
+}
+
