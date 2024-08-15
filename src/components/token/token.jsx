@@ -1,0 +1,3 @@
+const token = "BQB-4-lEofEMooMCZwNky1qKXcTAB9ZcdN-bfheQCJA3G8BUM__gjeWSR0dCiwD0loOPMahON24lMUzuCim6RtS-5sv6ZLrzmKkG1L_Ro84Efr6ZO2Wn2l5GiLRdWHORBDZHvR0ASDx6afIvYr7GM03fjcVdJKlM5S0_N2-3URP7Itwmzi-G6LDfcU9OqHOVHOxdSkNDKNiCigQ3N__-uAu-ZMCu_oNTbhQMXUf2Fruhm1rU0wiIVcmd__pMyzDchIlGm1ZoUrHOuoiIGjBEOdcdeIj_8A";
+
+export default token;
