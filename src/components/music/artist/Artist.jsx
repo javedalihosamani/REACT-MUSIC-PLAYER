@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from './image/Image';
+import { NavLink } from 'react-router-dom';
 
 const Artist = (props) => {
     const {id, name, images, followers} = props;
@@ -17,7 +18,7 @@ const Artist = (props) => {
                 </ul>
             </div>
             <div className="card-footer">
-                <i className="bi bi-music-note-list"></i>
+                <NavLink to={`/track/${id}`} className="btn btn-outline-primary"><i className="bi bi-music-note-list"></i></NavLink>
             </div>
         </div>
     </div>
