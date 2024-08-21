@@ -51,10 +51,40 @@ const Track = () => {
             return <strong className='text-danger'>No Track</strong>
         }
 
-        if(playing){
+        if(playing && url === preUrl){
             return <button className="btn btn-sm btn-warning"> <i className="bi bi-pause-fill"></i></button>
         } else {
             return <button className="btn btn-sm btn-success"> <i className="bi bi-play-fill"></i> </button>
+        }
+    }
+
+    // To handle Play
+    const playAudio = (url) => {
+        // console.log("Play Audio =", url);
+
+        const myAudio = new Audio(url);
+        //console.log("myAudio", myAudio);
+
+        setAudio(myAudio);
+        setPreUrl(url);
+
+        if(!playing){
+            myAudio.play();
+            setPlaying(true);
+        } else {
+            //play to pause
+            audio.pause();
+
+            // Pause to Play
+            if(preUrl === url){
+                setPlaying(false); // Pase state
+            }else{
+                myAudio.play();
+
+                /* setPlaying(true);
+                setPreUrl(url);
+                setAudio(myAudio); */
+            }            
         }
     }
 
@@ -82,12 +112,12 @@ const Track = () => {
             <div className="row">
                 {
                     tracks.map((item, index) => {
-                        const {id, name, album, preview_url, duration_ms} = item;
+                        const { name, album, preview_url, duration_ms} = item;
                         return(
                             <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 my-2" key={index}>
                                 {
                                     view ? (
-                                        <div className="card shadow">
+                                        <div className="card shadow" onClick={()=> {playAudio(preview_url)}}>
                                             <img src={album ? album.images[0].url : ""} alt="" className='img-fluid card-img-top shadow' style={{height:'300px'}} />
                                             <div className="card-body">
                                                 <p className="text-success text-center"> { name } </p>
@@ -98,7 +128,7 @@ const Track = () => {
                                             </div>
                                         </div>
                                     ) : (
-                                        <ul className="list-group shadow">
+                                        <ul className="list-group shadow" onClick={()=> {playAudio(preview_url)}}>
                                             <li className="list-group-item">
                                                 <div className="row">
                                                     <div className="col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
